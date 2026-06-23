@@ -1,7 +1,7 @@
 <template>
   <div
     ref="introRef"
-    class="fixed inset-0 z-[999] bg-black text-white flex items-center justify-center px-8"
+    class="fixed inset-0 z-999 bg-black text-white flex items-center justify-center px-8"
   >
     <h1
       v-for="(line, i) in lines"

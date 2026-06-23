@@ -1,14 +1,14 @@
 <template>
   <div
     ref="cardRef"
-    class="mt-[10vh] border border-white/20 bg-black text-white overflow-hidden w-[85vw] max-w-[90vw] md:max-w-[1200px] md:w-[90vw] cursor-pointer md:cursor-default"
+    class="mt-[10vh] border border-white/20 bg-black text-white overflow-hidden w-[85vw] max-w-[90vw] md:max-w-1200px md:w-[90vw] cursor-pointer md:cursor-default"
     @click="toggleMobile"
   >
     <div class="flex flex-col md:flex-row items-stretch">
       <!-- Media -->
       <div
         ref="mediaRef"
-        class="w-full md:w-[42%] aspect-[4/5] md:aspect-auto overflow-hidden shrink-0"
+        class="w-full md:w-[42%] aspect-4/5 md:aspect-auto overflow-hidden shrink-0"
       >
         <img
           :src="avatar"
@@ -39,7 +39,7 @@
 
         <!-- Desktop: always visible -->
         <div class="hidden md:flex flex-col gap-6 mt-6 w-full">
-          <p class="text-sm text-white/70 leading-relaxed max-w-[420px]">
+          <p class="text-sm text-white/70 leading-relaxed max-w-420px">
             {{ bio }}
           </p>
 
