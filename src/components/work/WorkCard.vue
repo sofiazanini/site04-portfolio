@@ -1,14 +1,16 @@
 <template>
-  <div class="relative group aspect-7/5 overflow-hidden" 
-       @mouseenter="togglePixels(true)" 
-       @mouseleave="togglePixels(false)">
-    
+  <router-link
+    :to="`/work/${project.id}`"
+    class="relative group aspect-7/5 overflow-hidden block"
+    @mouseenter="togglePixels(true)"
+    @mouseleave="togglePixels(false)"
+  >
     <div class="absolute inset-0 w-full h-full p-2">
-      <img 
-        :src="project.image" 
-        :alt="project.title" 
+      <img
+        :src="project.image"
+        :alt="project.title"
         ref="imgRef"
-        class="w-full h-full object-cover transition-all duration-500" 
+        class="w-full h-full object-cover transition-all duration-500"
       />
     </div>
 
@@ -34,7 +36,7 @@
         {{ project.year }} // {{ project.tools }}
       </p>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script setup>
@@ -46,10 +48,9 @@ const detailsRef = ref(null)
 const tagsRef = ref(null)
 
 function togglePixels(isEntering) {
-  // Seleziona i pixel di questa specifica card
+  // seleziona i pixel di questa specifica card, parentElement perché ora è dentro router-link
   const pixels = detailsRef.value.parentElement.querySelectorAll('.pixel')
-  
-  // Animazione Pixel
+
   gsap.to(pixels, {
     opacity: isEntering ? 1 : 0,
     stagger: {
@@ -60,7 +61,6 @@ function togglePixels(isEntering) {
     duration: 0.2
   })
 
-  // Animazione Testo
   gsap.to(detailsRef.value, {
     opacity: isEntering ? 1 : 0,
     duration: 0.3,

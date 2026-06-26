@@ -23,9 +23,9 @@ import ProfileCard from '../components/ProfileCard.vue'
 import avatarImg from '../assets/about/profile-picture.jpg'
 
 
-// Aggiungi queste variabili nello script setup
+
 const finalString = 'ABOUT'
-const displayText = ref(finalString) // Inizializza col testo reale
+const displayText = ref(finalString)
 const chars = '!<>-=+*^?#@%$'
 let isScrambling = false
 

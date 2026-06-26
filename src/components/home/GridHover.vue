@@ -1,5 +1,5 @@
 <template>
-  <canvas ref="canvas" class="absolute inset-0 w-full h-full pointer-events-auto"></canvas>
+  <canvas ref="canvas" class="absolute inset-0 w-full h-screen pointer-events-auto"></canvas>
 </template>
 
 <script setup>

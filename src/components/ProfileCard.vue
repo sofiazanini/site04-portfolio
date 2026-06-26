@@ -1,7 +1,7 @@
 <template>
   <div
     ref="cardRef"
-    class="mt-[10vh] border border-white/20 bg-black text-white overflow-hidden w-[85vw] max-w-[90vw] md:max-w-1200px md:w-[90vw] cursor-pointer md:cursor-default"
+    class="mt-[10vh] border border-white/20 bg-black text-white overflow-hidden w-[80vw] max-w-[85vw] md:max-w-[90vw] md:w-[90vw] cursor-pointer md:cursor-default"
     @click="toggleMobile"
   >
     <div class="flex flex-col md:flex-row items-stretch">

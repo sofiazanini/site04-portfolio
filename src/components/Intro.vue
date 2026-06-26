@@ -66,7 +66,7 @@ const lines = [
   'Hi',
   "I'm Sofia",
   'Graphic Design Student',
-  'Nice to meet you',
+  'Nice to meet you!',
 ]
 
 // testo che vedo a schermo, parte vuoto e viene riempito dallo scramble

@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Doomsay Clock",
+    "year": "2023-2024",
+    "tools": "Adobe Suite",
+    "tags": ["Branding", "Editorial"],
+    "image": "/src/assets/works/doomsday-clock/doomsday-clock-cover.webp",
+    "description": "Il progetto analizza il rebrand del Bulletin of the Atomic Scientists, trasformando l’immaginario del Doomsday Clock da simbolo di minaccia a monito motivante per il cambiamento. Il cuore della nuova Corporate Identity è un logo dinamico e frastagliato che comunica l’urgenza globale.",
+    "gallery": [
+        "/src/assets/works/doomsday-clock/doomsday-clock-cover.webp",
+        "/src/assets/works/doomsday-clock/doomsday-clock-book.webp",
+        "/src/assets/works/doomsday-clock/doomsday-clock-section-01.mp4",
+        "/src/assets/works/doomsday-clock/doomsday-clock-section-02.mp4",
+        "/src/assets/works/doomsday-clock/doomsday-clock-section-03.mp4",
+        "/src/assets/works/doomsday-clock/doomsday-clock-back.webp"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Modula",
+    "year": "2023-2024",
+    "tools": "Illustrator",
+    "tags": ["Game Design", "Illustration"],
+    "image": "/src/assets/works/modula/modula-cover.webp",
+    "description": "Redesigning the classic deck through a unified grid. By using a single shared matrix, l've harmonized the shapes of the suits and court cards into one cohesive visual language.",
+    "gallery": [
+        "/src/assets/works/modula/modula-cover.webp",
+        "/src/assets/works/modula/modula-1.webp",
+        "/src/assets/works/modula/modula-2.webp",
+        "/src/assets/works/modula/modula-3.webp",
+        "/src/assets/works/modula/modula-4.webp",
+        "/src/assets/works/modula/modula-5.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Pittogrammi e Ideogrammi",
+    "year": "2023-2024",
+    "tools": "Indesign, Illustrator",
+    "tags": ["Icons", "Symbols"],
+    "image": "/src/assets/works/pittogrammi-ideogrammi/pittogrammi-cover.webp",
+    "description": "Creazione di un linguaggio visivo basato su una matrice geometrica obbligatoria per tradurre soggetti eterogenei in segni coerenti. Il progetto prevede lo sviluppo di 5 pittogrammi e 3 ideogrammi (su una serie TV, una poesia, e un luogo), ottimizzati tecnicamente per garantire leggibilità e tenuta formale attraverso varianti cromatiche, versioni in positivo/negativo e riduzioni in scala fino a 1 cm.",
+    "gallery": [
+        "/src/assets/works/pittogrammi-ideogrammi/pittogrammi-cover.webp",
+        "/src/assets/works/pittogrammi-ideogrammi/pittogrammi-1.webp",
+        "/src/assets/works/pittogrammi-ideogrammi/pittogrammi-2.webp",
+        "/src/assets/works/pittogrammi-ideogrammi/pittogrammi-3.webp",
+        "/src/assets/works/pittogrammi-ideogrammi/pittogrammi-4.webp",
+        "/src/assets/works/pittogrammi-ideogrammi/pittogrammi-5.webp",
+        "/src/assets/works/pittogrammi-ideogrammi/pittogrammi-6.webp",
+        "/src/assets/works/pittogrammi-ideogrammi/pittogrammi-7.webp",
+        "/src/assets/works/pittogrammi-ideogrammi/pittogrammi-8.webp",
+        "/src/assets/works/pittogrammi-ideogrammi/pittogrammi-9.webp",
+        "/src/assets/works/pittogrammi-ideogrammi/pittogrammi-10.webp"
+        
+
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Sereno Summer League",
+    "year": 2026,
+    "tools": "Lightroom",
+    "tags": ["Photography"],
+    "image": "/src/assets/works/sereno-summer-league/sereno-summer-league-cover.webp",
+    "description": "Reportage del torneo di Basket \"Sereno Summer League\".",
+    "gallery": [
+      "/src/assets/works/sereno-summer-league/sereno-summer-league-12.webp",
+      "/src/assets/works/sereno-summer-league/sereno-summer-league-1.webp",
+      "/src/assets/works/sereno-summer-league/sereno-summer-league-2.webp",
+      "/src/assets/works/sereno-summer-league/sereno-summer-league-3.webp",
+      "/src/assets/works/sereno-summer-league/sereno-summer-league-4.webp",
+      "/src/assets/works/sereno-summer-league/sereno-summer-league-5.webp",
+      "/src/assets/works/sereno-summer-league/sereno-summer-league-6.webp",
+      "/src/assets/works/sereno-summer-league/sereno-summer-league-7.webp",
+      "/src/assets/works/sereno-summer-league/sereno-summer-league-8.webp",
+      "/src/assets/works/sereno-summer-league/sereno-summer-league-9.webp",
+      "/src/assets/works/sereno-summer-league/sereno-summer-league-10.webp",
+      "/src/assets/works/sereno-summer-league/sereno-summer-league-11.webp"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "I Can Do It",
+    "year": 2026,
+    "tools": "After Effects, Logic Pro",
+    "tags": ["Motion Graphics", "Animation"],
+    "image": "/src/assets/works/i-can-do-it/i-can-do-it-cover.webp",
+    "description": "Motion graphics realizzato con After Effects remixando la traccia originale dell'audio su Logic Pro.",
+    "gallery": [
+      "/src/assets/works/i-can-do-it/i-can-do-it-01.mp4",
+      "/src/assets/works/i-can-do-it/i-can-do-it-02.webp"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Mita",
+    "year": 2026,
+    "tools": "Indesign, Photoshop",
+    "tags": ["Posters", "Editorial"],
+    "image": "/src/assets/works/mita/mita-cover.webp",
+    "description": "Il progetto nasce dall'analisi di un tappeto da viaggio MITA e utilizza il dinamismo delle sue frange per raccontare il viaggio di scoperta di una bambina di nome Ayna. Il fulcro concettuale si concentra sul vuoto tra le frange, inteso come un'opportunità di fuga e di curiosità radicale per andare oltre i limiti del già noto. Visivamente, questa scomposizione della realtà si traduce in un pieghevole-mappa basato su scatti macro di oggetti quotidiani e pixel, dove il colore diventa un codice per esplorare l'ignoto..",
+    "gallery": [
+      "/src/assets/works/mita/mita-cover.webp",
+      "/src/assets/works/mita/mita-01.webp",
+      "/src/assets/works/mita/mita-02.webp",
+      "/src/assets/works/mita/mita-03.webp",
+      "/src/assets/works/mita/mita-04.webp"
+    ]
+  }
+]
