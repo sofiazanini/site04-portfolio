@@ -1,16 +1,16 @@
 <template>
-  <div ref="introRef" class="fixed inset-0 z-999 bg-black text-white flex items-center justify-center px-8" >
+  <div ref="introRef" class="fixed inset-0 z-[999] bg-black text-white flex items-center justify-center px-8">
     <GridHover />
 
-    <div class="relative z-10 flex flex-col items-center gap-10 md:gap-6 w-full"> 
+    <div class="relative z-10 flex flex-col items-center gap-10 md:gap-6 w-full">
       <span class="font-mono text-4xl md:text-5xl font-bold tracking-tight text-white/90">
-        <!-- counter --> {{ String(loadingPercent).padStart(3, '0') }}%
+        {{ String(loadingPercent).padStart(3, '0') }}% <!-- counter a 3 cifre -->
       </span>
 
       <div class="relative w-full min-h-28 md:h-36 flex items-center justify-center px-4">
         <h1
           v-for="(line, i) in lines"
-          :key="i"
+          :key="line"
           ref="lineRefs"
           class="absolute text-center font-bold opacity-0 font-mono will-change-transform whitespace-normal md:whitespace-nowrap leading-tight"
           style="font-size: clamp(2.25rem, 9vw, 5.5rem);"
@@ -18,7 +18,6 @@
           {{ displayLines[i] }}
         </h1>
       </div>
-
     </div>
 
     <div
@@ -35,10 +34,9 @@ import GridHover from './home/GridHover.vue'
 
 const emit = defineEmits(['done']) // avvisa App.vue quando l'intro finisce
 
-const introRef = ref(null)
-const lineRefs = ref([])
-const progressBarRef = ref(null)
-
+const introRef = ref(null) // contenitore principale da far uscire verso l'alto
+const lineRefs = ref([]) // array degli h1 generati dal v-for, usato da GSAP
+const progressBarRef = ref(null) // barra in basso: prima progresso, poi effetto sipario
 
 const lines = [
   'Hi',
@@ -47,16 +45,15 @@ const lines = [
   'Nice to meet you!',
 ]
 
-const displayLines = ref(lines.map(() => ''))
-
+const displayLines = ref(lines.map(() => '')) // il testo parte vuoto poi scramble
 const loadingPercent = ref(0)
-
 const chars = '!<>-_\\/[]{}—=+*^?#________' // caratteri per l'effetto
 
 // fa l'effetto testo glitch/scramble riga per riga
 function scrambleLine(index, originalText, duration = 0.6) {
   return new Promise((resolve) => {
-    const obj = { progress: 0 }
+    const obj = { progress: 0 } // GSAP anima questo numero da 0 a 1
+
     gsap.to(obj, {
       progress: 1,
       duration,
@@ -64,6 +61,7 @@ function scrambleLine(index, originalText, duration = 0.6) {
       onUpdate: () => {
         const decodeCount = Math.floor(obj.progress * originalText.length)
         let currentText = ''
+
         for (let i = 0; i < originalText.length; i++) {
           if (originalText[i] === ' ' || originalText[i] === "'") {
             currentText += originalText[i]
@@ -73,10 +71,11 @@ function scrambleLine(index, originalText, duration = 0.6) {
             currentText += chars[Math.floor(Math.random() * chars.length)]
           }
         }
+
         displayLines.value[index] = currentText
       },
       onComplete: () => {
-        displayLines.value[index] = originalText
+        displayLines.value[index] = originalText // alla fine mostra sempre la frase corretta
         resolve()
       }
     })
@@ -86,15 +85,14 @@ function scrambleLine(index, originalText, duration = 0.6) {
 // tempistiche fisse della sequenza per sincronizzare counter e barra
 const ENTER_DURATION = 0.6
 const SCRAMBLE_DURATION = 0.6
-const PAUSE_DURATION = 0.5
+const PAUSE_DURATION = 0.3 // ridotto da 0.5 per velocizzare
 const EXIT_DURATION = 0.5
 const LINE_DURATION = ENTER_DURATION + SCRAMBLE_DURATION + PAUSE_DURATION + EXIT_DURATION
 
 onMounted(() => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-  // se l'utente ha le animazioni disattivate nel sistema operativo, fa solo un fade rapido
-  if (prefersReducedMotion) {
+  if (prefersReducedMotion) { // versione rapida per chi ha ridotto le animazioni nel sistema
     displayLines.value = [...lines]
     loadingPercent.value = 100
 
@@ -107,11 +105,10 @@ onMounted(() => {
     return
   }
 
-  const totalDuration = lines.length * LINE_DURATION // calcola la durata totale reale
+  const totalDuration = lines.length * LINE_DURATION // durata di tutta la sequenza
 
-  // fa avanzare il counter da 0 a 100 in sincrono con le righe
   const progressObj = { value: 0 }
-  gsap.to(progressObj, {
+  gsap.to(progressObj, { // counter numerico sincronizzato con le frasi
     value: 100,
     duration: totalDuration,
     ease: 'none',
@@ -120,34 +117,28 @@ onMounted(() => {
     }
   })
 
-  gsap.to(progressBarRef.value, { // allunga la barra in basso da 0 a 1
+  gsap.to(progressBarRef.value, { // barra inferiore che cresce da sinistra a destra
     scaleX: 1,
     duration: totalDuration,
     ease: 'none'
   })
 
-  // loop asincrono per gestire la sequenza delle frasi
-  async function playSequence() {
+  async function playSequence() { // sequenza principale dell'intro
     for (let i = 0; i < lines.length; i++) {
       const el = lineRefs.value[i]
 
-      gsap.set(el, { scale: 0.85, filter: 'blur(8px)' }) // 1. entra col blur
+      gsap.set(el, { opacity: 0 })
       await gsap.to(el, {
         opacity: 1,
-        scale: 1,
-        filter: 'blur(0px)',
         duration: ENTER_DURATION,
         ease: 'power2.out'
       }).then()
 
-      await scrambleLine(i, lines[i], SCRAMBLE_DURATION)       // 2. fa l'effetto scramble
+      await scrambleLine(i, lines[i], SCRAMBLE_DURATION) // decodifica la frase corrente
+      await new Promise((r) => setTimeout(r, PAUSE_DURATION * 1000)) // pausa per leggerla
 
-      await new Promise((r) => setTimeout(r, PAUSE_DURATION * 1000)) // 3. resta ferma leggibile
-
-      await gsap.to(el, { // 4. esce col blur ingrandendosi
+      await gsap.to(el, { // uscita della frase prima della successiva
         opacity: 0,
-        scale: 1.1,
-        filter: 'blur(8px)',
         duration: EXIT_DURATION,
         ease: 'power2.in'
       }).then()
@@ -156,17 +147,15 @@ onMounted(() => {
     loadingPercent.value = 100
     gsap.set(progressBarRef.value, { scaleX: 1 })
 
-
     await new Promise((r) => setTimeout(r, 150)) // breve pausa col 100% fisso
 
-    // 5. effetto sipario: la barra riempie lo schermo e tutto sale su
-    await gsap.to(progressBarRef.value, {
+    await gsap.to(progressBarRef.value, { // la barra diventa un sipario
       height: '100vh',
       duration: 0.3,
       ease: 'power3.in'
     }).then()
 
-    await gsap.to(introRef.value, {
+    await gsap.to(introRef.value, { // sposta fuori l'intro e lascia vedere la pagina
       y: '-100%',
       duration: 0.45,
       ease: 'power3.inOut'
