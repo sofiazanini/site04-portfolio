@@ -18,7 +18,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import GridHover from '../components/home/GridHover.vue'
+import GridHover from '../components/GridHover.vue'
 import ProfileCard from '../components/ProfileCard.vue'
 import avatarImg from '../assets/about/profile-picture.jpg'
 

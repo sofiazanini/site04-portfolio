@@ -27,7 +27,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import gsap from 'gsap'
-import GridHover from '../components/home/GridHover.vue'
+import GridHover from '../components/GridHover.vue'
 
 const imgLeft = ref(null)
 const imgRight = ref(null)

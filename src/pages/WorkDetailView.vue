@@ -62,7 +62,7 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import GridHover from '../components/home/GridHover.vue'
+import GridHover from '../components/GridHover.vue'
 
 const route = useRoute()
 

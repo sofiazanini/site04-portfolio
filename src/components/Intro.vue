@@ -30,7 +30,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
-import GridHover from './home/GridHover.vue'
+import GridHover from './GridHover.vue'
 
 const emit = defineEmits(['done']) // avvisa App.vue quando l'intro finisce
 

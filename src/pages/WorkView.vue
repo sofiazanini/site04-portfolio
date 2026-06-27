@@ -23,8 +23,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import WorkCard from '../components/work/WorkCard.vue'
-import GridHover from '../components/home/GridHover.vue'
+import WorkCard from '../components/WorkCard.vue'
+import GridHover from '../components/GridHover.vue'
 
 // dati progetti caricati via fetch (API JSON locale)
 const projects = ref([])
