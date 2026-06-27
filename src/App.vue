@@ -1,10 +1,11 @@
 <template>
   <div class="min-h-screen bg-black text-white overflow-x-hidden">
-    <Intro v-if="showIntro" @done="finishIntro" />
+    <Intro v-if="showIntro" @done="finishIntro" /> <!-- se è true c'è l'intro, poi cambia in @done -->
+
     <template v-else>
       <MainMenu />
       <div class="relative z-10">
-        <router-view />
+        <router-view /> <!-- fa caricare le pagine -->
       </div>
     </template>
   </div>
@@ -15,15 +16,11 @@ import { ref } from 'vue'
 import MainMenu from './components/MainMenu.vue'
 import Intro from './components/Intro.vue'
 
-// chiave sessionStorage: si resetta alla chiusura del browser/tab,
-// quindi la intro torna a comparire ogni nuova sessione ma non ad ogni refresh/navigazione interna
-const INTRO_KEY = 'intro-shown'
-
-// se l'ho già vista in questa sessione, salto direttamente al sito
-const showIntro = ref(sessionStorage.getItem(INTRO_KEY) !== 'true')
+const INTRO_KEY = 'intro-shown' // serve per capire se è già stata vista l'intro
+const showIntro = ref(sessionStorage.getItem(INTRO_KEY) !== 'true') // se già vista salta al sito
 
 function finishIntro() {
-  sessionStorage.setItem(INTRO_KEY, 'true')
-  showIntro.value = false
+  sessionStorage.setItem(INTRO_KEY, 'true') // blocca l'intro per i prossimi refresh
+  showIntro.value = false // nasconde la intro e carica il sito
 }
 </script>
