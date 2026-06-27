@@ -8,15 +8,14 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const canvas = ref(null)
 let ctx, raf
 
-// dimensione cella (densità griglia)
-const cellSize = 18 
+const cellSize = 18 // dimensione cella griglia
 let cols = 0
 let rows = 0
 
-// gestione scia
+// Opzioni scia mouse (durata, raggio)
 let trail = []        
-const trailLength = 15 // quanto dura la scia
-const maxDist = 100     // raggio d'azione mouse
+const trailLength = 15 
+const maxDist = 100  
 
 // caratteri ordinati per densità visiva
 const asciiChars = [' ', '.', ':', '-', '=', '+', '*', '%', '@', '#']
@@ -42,12 +41,11 @@ function onMouseLeave() {
 function draw() {
   ctx.clearRect(0, 0, canvas.value.width, canvas.value.height)
 
-  if (trail.length > 0 && raf % 2 === 0) { 
+  if (trail.length > 0 && raf % 2 === 0) {    // scia fluida quando il mouse si ferma
     trail.pop() 
   }
 
-  // area in alto per la navbar (12% dello schermo)
-  const fadeZone = window.innerHeight * 0.12
+  const fadeZone = window.innerHeight * 0.12 // area per la navbar (12% dello schermo)
 
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
@@ -58,6 +56,7 @@ function draw() {
 
       let maxIntensity = 0
 
+      // Calcola quanto il mouse è vicino a questa cella della griglia
       for (let k = 0; k < trail.length; k++) {
         const point = trail[k]
         const dist = Math.hypot(point.x - cx, point.y - cy)
@@ -69,14 +68,13 @@ function draw() {
         }
       }
 
-      // puntini fissi di sfondo (texture del sito)
+      // puntini fissi di sfondo
       ctx.fillStyle = 'rgba(255, 255, 255, 0.08)'
       ctx.font = `${cellSize}px monospace`
       ctx.textAlign = 'center'
       ctx.textBaseline = 'middle'
       ctx.fillText('.', cx, cy)
 
-      // calcolo dissolvenza per non coprire i testi in alto
       let fadeFactor = 1
       if (cy < fadeZone) {
         fadeFactor = Math.max(0, cy / fadeZone) // scende a 0 man mano che sale a 0px
