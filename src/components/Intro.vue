@@ -1,5 +1,5 @@
 <template>
-  <div ref="introRef" class="fixed inset-0 z-[999] bg-black text-white flex items-center justify-center px-8">
+  <div ref="introRef" class="fixed inset-0 z-999 bg-black text-white flex items-center justify-center px-8">
     <GridHover />
 
     <div class="relative z-10 flex flex-col items-center gap-10 md:gap-6 w-full">
