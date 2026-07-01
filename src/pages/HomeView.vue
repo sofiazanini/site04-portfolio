@@ -29,15 +29,12 @@ gsap.registerPlugin(ScrambleTextPlugin)
 const heroImg = ref(null)
 const textRef = ref(null)
 
+// Scramble hover
 const triggerScramble = () => {
   gsap.to(textRef.value, { 
     duration: 1, 
-    scrambleText: { 
-      text: "SOFIZANINI.GRAPHIC", 
-      chars: "!<>-=+*^?#@%$", 
-      revealDelay: 0 
-    } 
-  })
+    scrambleText: { text: "SOFIZANINI.GRAPHIC", chars: "!<>-=+*^?#@%$", revealDelay: 0 } 
+})
 }
 
 const handleMouseMove = (e) => {
