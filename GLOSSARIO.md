@@ -22,5 +22,3 @@ Termini utili utilizzati per creare il progetto
     </body>
     </html>
     ```
-
-- 
