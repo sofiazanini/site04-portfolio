@@ -1,40 +1,35 @@
 <template>
   <router-link
     :to="`/work/${project.id}`"
-    class="relative group aspect-7/5 overflow-hidden block"
-    @mouseenter="togglePixels(true)"
-    @mouseleave="togglePixels(false)"
+    class="group block relative aspect-7/5 overflow-hidden"
+    @mouseenter="handleHover(true)"
+    @mouseleave="handleHover(false)"
   >
-    <div class="absolute inset-0 w-full h-full p-2">
-      <img
-        :src="project.image"
-        :alt="project.title"
-        ref="imgRef"
-        class="w-full h-full object-cover transition-all duration-500"
-      />
-    </div>
+    <img
+      :src="project.image"
+      :alt="project.title"
+      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+    />
 
-    <div class="absolute inset-0 grid grid-cols-8 grid-rows-6 pointer-events-none">
-      <div v-for="i in 48" :key="i" class="pixel bg-black opacity-0"></div>
-    </div>
+    <div ref="overlayRef" class="absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-50"></div>
 
-    <div v-if="project.tags?.length" ref="tagsRef" class="absolute inset-x-0 top-0 flex flex-wrap items-center gap-2 p-10 opacity-0 pointer-events-none">
-      <span
-        v-for="(tag, index) in project.tags"
-        :key="index"
-        class="rounded-full border border-white/20 bg-black/60 px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-white/80"
-      >
-        {{ tag }}
-      </span>
-    </div>
+    <div ref="contentRef" class="absolute inset-0 p-10 flex flex-col justify-between opacity-0 pointer-events-none">
+      
+      <div v-if="project.tags?.length" class="flex flex-wrap gap-2 self-start">
+        <span
+          v-for="tag in project.tags"
+          :key="tag"
+          class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-white"
+        >
+          {{ tag }}
+        </span>
+      </div>
 
-    <div ref="detailsRef" class="absolute inset-x-0 bottom-0 flex flex-col justify-end p-10 opacity-0 pointer-events-none">
-      <h3 class="text-xl font-bold tracking-tight text-white uppercase">
-        {{ project.title }}
-      </h3>
-      <p class="text-xs text-zinc-300 mt-2 uppercase tracking-widest">
-        {{ project.year }} // {{ project.tools }}
-      </p>
+      <div class="self-start">
+        <h3 class="text-xl font-bold tracking-tight text-white uppercase">{{ project.title }}</h3>
+        <p class="text-xs text-zinc-300 mt-2 uppercase tracking-widest">{{ project.year }} // {{ project.tools }}</p>
+      </div>
+      
     </div>
   </router-link>
 </template>
@@ -43,36 +38,20 @@
 import { ref } from 'vue'
 import gsap from 'gsap'
 
-const props = defineProps({ project: Object })
-const detailsRef = ref(null)
-const tagsRef = ref(null)
+defineProps({ project: Object })
 
-function togglePixels(isEntering) {
-  // seleziona i pixel di questa specifica card, parentElement perché ora è dentro router-link
-  const pixels = detailsRef.value.parentElement.querySelectorAll('.pixel')
+const overlayRef = ref(null)
+const contentRef = ref(null)
 
-  gsap.to(pixels, {
-    opacity: isEntering ? 1 : 0,
-    stagger: {
-      grid: [6, 8],
-      from: "random",
-      amount: 0.3
-    },
-    duration: 0.2
-  })
-
-  gsap.to(detailsRef.value, {
-    opacity: isEntering ? 1 : 0,
+function handleHover(isEntering) {
+  // Scurimento overlay
+  gsap.to(overlayRef.value, { opacity: isEntering ? 1 : 0, duration: 0.4 })
+  
+  // Animazione contenuto
+  gsap.to(contentRef.value, { 
+    opacity: isEntering ? 1 : 0,  
     duration: 0.3,
-    delay: isEntering ? 0.1 : 0
+    ease: "power2.out"
   })
-
-  if (tagsRef.value) {
-    gsap.to(tagsRef.value, {
-      opacity: isEntering ? 1 : 0,
-      duration: 0.3,
-      delay: isEntering ? 0.1 : 0
-    })
-  }
 }
 </script>

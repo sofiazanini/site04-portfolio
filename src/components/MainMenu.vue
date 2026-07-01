@@ -37,7 +37,7 @@
     leave-to-class="opacity-0"
     class="transition-opacity duration-500 ease-in-out"
   >
-    <div v-if="open" class="fixed inset-0 bg-black z-[100] flex flex-col justify-between px-8 text-white font-mono">
+    <div v-if="open" class="fixed inset-0 bg-black z-100 flex flex-col justify-between px-8 text-white font-mono">
       <div class="h-[10vh] flex justify-between items-center w-full">
         <router-link to="/" class="text-sm uppercase tracking-widest text-white py-2" @click="open = false" @mouseenter="scramble($event.target, 'SOFIA ZANINI')">
           SOFIA ZANINI
