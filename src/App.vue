@@ -21,6 +21,6 @@ const showIntro = ref(sessionStorage.getItem(INTRO_KEY) !== 'true') // se già v
 
 function finishIntro() {
   sessionStorage.setItem(INTRO_KEY, 'true') // blocca l'intro per i prossimi refresh
-  showIntro.value = false // nasconde la intro e carica il sito
+  showIntro.value = false // nasconde l'intro e carica il sito
 }
 </script>
