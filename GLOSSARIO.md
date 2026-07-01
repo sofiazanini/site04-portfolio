@@ -2,7 +2,7 @@
 
 Termini utili utilizzati per creare il progetto
 
-- **Ref** (`ref`): Riferimento reattivo a un elemento del DOM (es. il tag `<canvas>`).
+- **Ref** (`ref`): Serve a rendere reattiva una variabile o a creare un riferimento diretto a un elemento del DOM.
 - **onMounted**: Hook eseguito quando la pagina è caricata e l'HTML è pronto.
 - **onUnmounted**: Hook eseguito alla distruzione del componente (rimozione filtri/listener).
 - **RequestAnimationFrame** (`raf`): Funzione nativa per sincronizzare i calcoli con i frame dello schermo a 60fps (evita scatti).
@@ -22,3 +22,5 @@ Termini utili utilizzati per creare il progetto
     </body>
     </html>
     ```
+
+- 
