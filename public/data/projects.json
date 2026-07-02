@@ -100,13 +100,90 @@
     "tools": "Indesign, Photoshop",
     "tags": ["Posters", "Editorial"],
     "image": "/src/assets/works/mita/mita-cover.webp",
-    "description": "Il progetto nasce dall'analisi di un tappeto da viaggio MITA e utilizza il dinamismo delle sue frange per raccontare il viaggio di scoperta di una bambina di nome Ayna. Il fulcro concettuale si concentra sul vuoto tra le frange, inteso come un'opportunità di fuga e di curiosità radicale per andare oltre i limiti del già noto. Visivamente, questa scomposizione della realtà si traduce in un pieghevole-mappa basato su scatti macro di oggetti quotidiani e pixel, dove il colore diventa un codice per esplorare l'ignoto..",
+    "description": "Il progetto nasce dall'analisi di un tappeto da viaggio MITA e utilizza il dinamismo delle sue frange per raccontare il viaggio di scoperta di una bambina di nome Ayna. Il fulcro concettuale si concentra sul vuoto tra le frange, inteso come un'opportunità di fuga e di curiosità radicale per andare oltre i limiti del già noto. Visivamente, questa scomposizione della realtà si traduce in un pieghevole-mappa basato su scatti macro di oggetti quotidiani e pixel, dove il colore diventa un codice per esplorare l'ignoto.",
     "gallery": [
       "/src/assets/works/mita/mita-cover.webp",
       "/src/assets/works/mita/mita-01.webp",
       "/src/assets/works/mita/mita-02.webp",
       "/src/assets/works/mita/mita-03.webp",
       "/src/assets/works/mita/mita-04.webp"
+    ]
+  },
+
+    {
+    "id": 7,
+    "title": "Brutalist Posters",
+    "year": 2023,
+    "tools": "Illustrator, Photoshop",
+    "tags": ["Posters", "Editorial"],
+    "image": "/src/assets/works/poster-brutalist/poster-brutalist-cover.webp",
+    "description": "I poster sono stati creati per rappresentare lo stile brutalista, sono partita da un layout rigido per poi aggiornarlo con immagini elaborate per uscire dagli schermi",
+    "gallery": [
+      "/src/assets/works/poster-brutalist/poster-brutalist-01.webp",
+      "/src/assets/works/poster-brutalist/poster-brutalist-02.webp"
+    ]
+  },
+
+  {
+    "id": 8,
+    "title": "Armonia del caos",
+    "year": 2026,
+    "tools": "Photoshop",
+    "tags": ["Posters", "Editorial"],
+    "image": "/src/assets/works/armonia-del-caos/armonia-del-caos-cover.webp",
+    "description": "Poster che elaborano l'ultilizzo dei font partendo dalle poesie",
+    "gallery": [
+      "/src/assets/works/armonia-del-caos/armonia-del-caos-cover.webp",
+      "/src/assets/works/armonia-del-caos/armonia-del-caos-01.webp",
+      "/src/assets/works/armonia-del-caos/armonia-del-caos-02.webp",
+      "/src/assets/works/armonia-del-caos/armonia-del-caos-03.webp",
+      "/src/assets/works/armonia-del-caos/armonia-del-caos-04.webp"
+    ]
+  },
+
+  {
+    "id": 9,
+    "title": "Chaos is not only outside",
+    "year": 2026,
+    "tools": "Photoshop",
+    "tags": ["Posters", "Editorial"],
+    "image": "/src/assets/works/chaos/chaos-01.webp",
+    "description": "Chaos is not only outside",
+    "gallery": [
+      "/src/assets/works/chaos/chaos-01.webp",
+      "/src/assets/works/chaos/chaos-02.webp",
+      "/src/assets/works/chaos/chaos-03.webp"
+    ]
+  },
+
+    {
+    "id": 10,
+    "title": "Crazy things happen",
+    "year": 2026,
+    "tools": "Photoshop",
+    "tags": ["Posters", "Editorial"],
+    "image": "/src/assets/works/crazy-things-happen/crazy-things-happen-01.webp",
+    "description": "Crazy things happen",
+    "gallery": [
+      "/src/assets/works/crazy-things-happen/crazy-things-happen-01.webp",
+      "/src/assets/works/crazy-things-happen/crazy-things-happen-02.mp4",
+      "/src/assets/works/crazy-things-happen/crazy-things-happen-03.webp",
+      "/src/assets/works/crazy-things-happen/crazy-things-happen-04.webp"
+    ]
+  },
+  
+  {
+    "id": 11,
+    "title": "The world is a mess",
+    "year": 2026,
+    "tools": "Photoshop",
+    "tags": ["Posters", "Editorial"],
+    "image": "/src/assets/works/between-the-traces/between-the-traces-01.webp",
+    "description": "The world is a mess",
+    "gallery": [
+      "/src/assets/works/between-the-traces/between-the-traces-01.webp",
+      "/src/assets/works/between-the-traces/between-the-traces-02.webp",
+      "/src/assets/works/between-the-traces/between-the-traces-03.webp"
     ]
   }
 ]

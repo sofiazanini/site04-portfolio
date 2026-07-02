@@ -3,7 +3,7 @@
     <GridHover />
     
     <section class="h-[80vh] w-full flex items-center justify-center z-10 pointer-events-none pt-[5vw]">
-      <div ref="heroImg" class="pointer-events-auto cursor-crosshair transition-filter duration-500 ease-out style-invert px-6">
+      <div ref="heroImg" class="pointer-events-auto cursor-crosshair transition-filter duration-50 ease-out hover:invert px-6">
         <img src="../assets/home/hero-img-mobile.webp" class="md:hidden w-[75vw] max-w-sm h-auto object-contain" alt="Hero Sofia Zanini Mobile" draggable="false" />
         <img src="../assets/home/hero-img-desktop.webp" class="hidden md:block w-[60vw] max-w-4xl h-auto object-contain" alt="Hero Sofia Zanini Desktop" draggable="false" />
       </div>
