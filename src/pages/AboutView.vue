@@ -38,7 +38,7 @@
 import gsap from 'gsap'
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin'
 import GridHover from '../components/GridHover.vue'
-import profileImg from '../assets/about/profile-picture.jpg'
+import profileImg from '/assets/about/profile-picture.jpg'
 
 gsap.registerPlugin(ScrambleTextPlugin)
 
