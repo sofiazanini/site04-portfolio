@@ -1,4 +1,5 @@
 <template>
+  <Analytics />
   <div class="min-h-screen bg-black text-white overflow-x-hidden">
     <Intro v-if="showIntro" @done="finishIntro" /> <!-- se è true c'è l'intro, poi cambia in @done -->
 
@@ -15,6 +16,7 @@
 import { ref } from 'vue'
 import MainMenu from './components/MainMenu.vue'
 import Intro from './components/Intro.vue'
+import { Analytics } from '@vercel/analytics/vue'
 
 const INTRO_KEY = 'intro-shown' // serve per capire se è già stata vista l'intro
 const showIntro = ref(sessionStorage.getItem(INTRO_KEY) !== 'true') // se già vista salta al sito
